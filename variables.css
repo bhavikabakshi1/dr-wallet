@@ -1,0 +1,220 @@
+/*==========================================
+  DR. WALLET — DESIGN TOKENS
+  Vintage, warm & classy. One source of truth
+  for the whole product — change here, updates everywhere.
+
+  Core palette:  #CAE4DB pale mint · #CDC7BE greige
+                 #87A7B3 muted teal · #766161 taupe
+==========================================*/
+
+:root{
+
+    /* ---- surfaces (warm, paper-like) ---- */
+    --color-bg:#EFEBE3;
+    --color-surface:#FAF8F3;
+    --color-surface-alt:#E9E4DA;
+    --color-border:#DBD4C8;
+    --color-border-strong:#CDC7BE;
+
+    /* ---- brand: warm evergreen (harmonises with the earthy neutrals) ---- */
+    --color-primary:#3E5C4D;
+    --color-primary-dark:#324B3F;
+    --color-primary-light:#6E8B7C;
+    --color-primary-tint:#DDE7E0;
+
+    /* ---- money semantics (muted, vintage): green = saved, ochre = warning, terracotta = overspent ---- */
+    --color-accent:#4F7A60;
+    --color-accent-tint:#DBE7DE;
+    --color-warning:#B0823C;
+    --color-warning-tint:#EEE3CB;
+    --color-danger:#A85A4E;
+    --color-danger-tint:#EDD9D3;
+
+    /* ---- ink (warm brown-black scale) ---- */
+    --color-ink:#2C2724;
+    --color-slate:#6E635C;
+    --color-slate-light:#9C9188;
+
+    /* ---- category data-viz palette (muted / earthy, all warm) ---- */
+    --cat-food:#C1974B;
+    --cat-transit:#7C8B5A;
+    --cat-books:#94788C;
+    --cat-hostel:#5E8A6F;
+    --cat-other:#8A8078;
+
+    /* ---- type ---- */
+    --font-display:'Fraunces', 'Sora', serif;
+    --font-body:'Inter', system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+
+    /* ---- shape ---- */
+    --radius-sm:10px;
+    --radius-md:14px;
+    --radius-lg:20px;
+    --radius-pill:999px;
+
+    /* ---- elevation (soft, warm, grounded) ---- */
+    --shadow-sm:0 1px 2px rgba(55,48,46,.05), 0 4px 12px rgba(55,48,46,.06);
+    --shadow-md:0 4px 10px rgba(55,48,46,.06), 0 14px 30px rgba(55,48,46,.09);
+    --shadow-lg:0 10px 24px rgba(55,48,46,.09), 0 26px 52px rgba(55,48,46,.13);
+
+    /* ---- focus ring ---- */
+    --ring:0 0 0 3px rgba(62,92,77,.30);
+
+    /* ---- rich surfaces & motifs (the redesign layer) ---- */
+    --bg-grad:radial-gradient(1100px 640px at 88% -10%, #F8F4EB 0%, rgba(248,244,235,0) 58%), radial-gradient(900px 560px at -5% 108%, #E7EEEA 0%, rgba(231,238,234,0) 55%), linear-gradient(180deg,#F2EEE6,#EAE6DD);
+    --surface-inset:inset 0 1px 0 rgba(255,255,255,.6);
+    --rule:rgba(55,48,46,.15);
+    --rule-strong:rgba(55,48,46,.28);
+    --grad-primary:linear-gradient(180deg,#4A6B59 0%,#374F42 100%);
+    --grad-dark:linear-gradient(165deg,#413836,#2C2523);
+    --accent-glow:rgba(62,92,77,.20);
+    --grain-opacity:.028;
+    --grain-blend:soft-light;
+
+    /* ---- glass surfaces (navbar, flip-card) ---- */
+    --glass-navbar-bg:rgba(250,248,243,.74);
+    --glass-navbar-border:rgba(55,48,46,.07);
+    --glass-mobile-menu-bg:rgba(250,248,243,.97);
+    --glass-card-start:rgba(250,248,243,.88);
+    --glass-card-end:rgba(233,228,218,.55);
+    --glass-card-border:rgba(55,48,46,.07);
+    --glass-card-shine:rgba(255,255,255,.5);
+    --glass-card-inset:rgba(255,255,255,.8);
+    --glass-flip-btn-bg:rgba(250,248,243,.8);
+
+    /* ---- fixed-dark surfaces (footer, badges) — never flip ---- */
+    --color-fixed-dark:#37302E;
+
+    /* ---- layout ---- */
+    --container:1200px;
+}
+
+/*==========================================
+  DARK THEME (warm charcoal — vintage after dark)
+  Toggled by data-theme="dark" on <html>. See js/theme.js
+==========================================*/
+
+:root[data-theme="dark"]{
+
+    --color-bg:#191512;
+    --color-surface:#221D19;
+    --color-surface-alt:#2A241F;
+    --color-border:#38312B;
+    --color-border-strong:#473F38;
+
+    --color-primary:#8FB39E;
+    --color-primary-dark:#729580;
+    --color-primary-light:#A8C7B5;
+    --color-primary-tint:rgba(143,179,158,.16);
+
+    --color-accent:#84B79A;
+    --color-accent-tint:rgba(79,122,96,.20);
+    --color-warning:#D2A45A;
+    --color-warning-tint:rgba(176,130,60,.20);
+    --color-danger:#CA7B6E;
+    --color-danger-tint:rgba(168,90,78,.22);
+
+    --color-ink:#ECE5DA;
+    --color-slate:#B3A99D;
+    --color-slate-light:#7E7368;
+
+    --cat-food:#D0A85C;
+    --cat-transit:#9CA877;
+    --cat-books:#A88DA0;
+    --cat-hostel:#84A88C;
+    --cat-other:#9C9186;
+
+    --shadow-sm:0 1px 2px rgba(0,0,0,.32), 0 6px 16px rgba(0,0,0,.36);
+    --shadow-md:0 6px 16px rgba(0,0,0,.42), 0 18px 40px rgba(0,0,0,.46);
+    --shadow-lg:0 16px 40px rgba(0,0,0,.5), 0 30px 60px rgba(0,0,0,.55);
+
+    --ring:0 0 0 3px rgba(143,179,158,.34);
+
+    --bg-grad:radial-gradient(1150px 680px at 12% -12%, #2A211A 0%, rgba(42,33,26,0) 56%), radial-gradient(950px 620px at 102% 112%, #17201E 0%, rgba(23,32,30,0) 55%), linear-gradient(180deg,#1A1611,#131009);
+    --surface-inset:inset 0 1px 0 rgba(255,255,255,.055);
+    --rule:rgba(255,255,255,.09);
+    --rule-strong:rgba(255,255,255,.16);
+    --grad-primary:linear-gradient(180deg,#9CC0AB 0%,#7FA791 100%);
+    --grad-dark:linear-gradient(165deg,#2E2620,#221C17);
+    --accent-glow:rgba(143,179,158,.20);
+    --grain-opacity:.05;
+    --grain-blend:soft-light;
+
+    --glass-navbar-bg:rgba(34,29,25,.74);
+    --glass-navbar-border:rgba(255,255,255,.06);
+    --glass-mobile-menu-bg:rgba(34,29,25,.97);
+    --glass-card-start:rgba(42,36,31,.85);
+    --glass-card-end:rgba(25,21,18,.55);
+    --glass-card-border:rgba(255,255,255,.06);
+    --glass-card-shine:rgba(255,255,255,.05);
+    --glass-card-inset:rgba(255,255,255,.05);
+    --glass-flip-btn-bg:rgba(255,255,255,.07);
+
+    --color-fixed-dark:#221D19;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:var(--font-body);
+    background:var(--color-bg);
+    background-image:var(--bg-grad);
+    background-attachment:fixed;
+    color:var(--color-ink);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    letter-spacing:-0.01em;
+    transition:background-color .35s ease, color .35s ease;
+}
+
+/* film-grain texture — subtle warmth, kills the flat look (esp. dark mode) */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:9998;
+    pointer-events:none;
+    opacity:var(--grain-opacity);
+    mix-blend-mode:var(--grain-blend);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+:focus-visible{
+    outline:2px solid var(--color-primary);
+    outline-offset:2px;
+}
+
+.container{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 8%;
+}

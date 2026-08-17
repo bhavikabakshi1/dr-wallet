@@ -1,0 +1,227 @@
+/*==========================================
+  NAVBAR (fixed, floating pill)
+==========================================*/
+
+.site-header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    z-index:1000;
+    background:var(--glass-navbar-bg);
+    backdrop-filter:blur(20px) saturate(1.4);
+    -webkit-backdrop-filter:blur(20px) saturate(1.4);
+    border-bottom:1px solid var(--glass-navbar-border);
+    transition:background .35s ease, border-color .35s ease;
+}
+
+.navbar{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:28px;
+    max-width:1320px;
+    margin:0 auto;
+    padding:15px 6%;
+    background:transparent;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+}
+
+/* generous nav gap so links sit between logo and actions */
+.navbar .nav-links{
+    margin-right:auto;
+    margin-left:26px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-size:25px;
+    font-weight:700;
+    color:var(--color-ink);
+    font-family:var(--font-display);
+    letter-spacing:-.5px;
+}
+
+.logo i{
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+    border-radius:11px;
+    color:#fff;
+    background:var(--grad-primary);
+    box-shadow:0 4px 12px var(--accent-glow), var(--surface-inset);
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+}
+
+.nav-links a{
+    color:var(--color-slate);
+    font-weight:500;
+    font-size:14.5px;
+    position:relative;
+    transition:color .25s ease;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-7px;
+    border-radius:2px;
+    background:var(--color-primary);
+    transition:width .28s ease;
+}
+
+.nav-links a:hover{
+    color:var(--color-ink);
+}
+
+.nav-links a.active{
+    color:var(--color-ink);
+    font-weight:600;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+.nav-buttons{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.btn{
+    padding:12px 26px;
+    border-radius:var(--radius-pill);
+    font-weight:600;
+    font-size:14.5px;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+    border:none;
+    display:inline-block;
+}
+
+.btn-ghost{
+    border:1.5px solid var(--color-border-strong);
+    color:var(--color-ink);
+    background:transparent;
+}
+
+.btn-ghost:hover{
+    border-color:var(--color-primary);
+    color:var(--color-primary);
+    background:var(--color-surface);
+}
+
+.btn-primary{
+    background:var(--grad-primary);
+    color:#fff;
+    box-shadow:0 8px 20px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,.28);
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 28px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,.28);
+}
+
+.btn-logout{
+    border:2px solid var(--color-danger-tint);
+    color:var(--color-danger);
+    background:var(--color-danger-tint);
+}
+
+.btn-logout:hover{
+    background:var(--color-danger);
+    color:#fff;
+    border-color:var(--color-danger);
+}
+
+/* authSlot is a wrapper only for JS to target — it must not affect
+   the flex layout of .nav-buttons, so its children (guest buttons or
+   the user menu) lay out as if they were direct children. */
+#authSlot{
+    display:contents;
+}
+
+/* Lives inside the mobile dropdown menu; only shown on small screens
+   (see responsive.css) so account access works there too. */
+.mobile-auth-slot{
+    display:none;
+}
+
+/*==========================================
+  THEME TOGGLE (light / dark)
+==========================================*/
+
+.theme-toggle{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--color-surface-alt);
+    border:1px solid var(--color-border);
+    color:var(--color-ink);
+    font-size:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    transition:.3s;
+}
+
+.theme-toggle:hover{
+    border-color:var(--color-primary);
+    color:var(--color-primary);
+    transform:rotate(15deg);
+}
+
+.theme-toggle .fa-sun{
+    display:none;
+}
+
+:root[data-theme="dark"] .theme-toggle .fa-sun{
+    display:inline-block;
+    color:var(--color-warning);
+}
+
+:root[data-theme="dark"] .theme-toggle .fa-moon{
+    display:none;
+}
+
+/*==========================================
+  MOBILE TOGGLE (pure CSS, no JS)
+==========================================*/
+
+.nav-toggle{
+    display:none;
+}
+
+.nav-toggle-label{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    z-index:1200;
+}
+
+.nav-toggle-label span{
+    width:26px;
+    height:2px;
+    background:var(--color-ink);
+    border-radius:2px;
+    transition:.3s;
+}
